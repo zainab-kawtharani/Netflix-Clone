@@ -1,0 +1,45 @@
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import images from '../constant';
+
+
+
+const StyledHeader = styled.header`
+  padding: 0 4rem;
+  .header__logo {
+    img {
+      height: 5rem;
+    }
+  }
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 0.2rem;
+    font-weight: bolder;
+    font-size: 1.05rem;
+  }
+`;
+
+
+const Header = (props) => {
+  const navigate =useNavigate();
+  return (
+    <StyledHeader className='flex a-center j-between'>
+      <div className='header__logo'>
+        <img src={images.logo} alt='logo'/>
+      </div>
+      <button onClick={()=>{navigate("/login")}} >
+          Log In    
+      </button>
+
+      
+    </StyledHeader>
+  )
+}
+
+export default Header;
+
